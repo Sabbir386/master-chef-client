@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Chef = () => {
+
     return (
-        <div>
-            <h2>this is chef section</h2>
-        </div>
+
+        <h2>chef page</h2>
+
     );
 };
 
