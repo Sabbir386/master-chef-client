@@ -13,19 +13,21 @@ const Chef = () => {
             .catch(error => console.log(error))
     }, [])
     return (
-        <div>
+        < >
             <div className='text-center text-3xl font-semibold'>Our Chef Masters</div>
-            {
-                chefMaster.map(data => <ChefMaster
-                    key={data.id}
-                    data={data}
-                >
-                    {/* <Link to={`/data/${data.id}`} className='text-black'>{data.name}</Link> */}
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 '>
+                {
+                    chefMaster.map(data => <ChefMaster
+                        key={data.id}
+                        data={data}
+                    >
 
-                </ChefMaster>)
-            }
 
-        </div>
+                    </ChefMaster>)
+                }
+
+            </div>
+        </>
 
 
 
