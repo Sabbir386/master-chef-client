@@ -4,7 +4,7 @@ import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/Bs';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
 
 
@@ -14,6 +14,8 @@ const Login = () => {
 
 
     const provider = new GoogleAuthProvider();
+
+    const gitHubProvider = new GithubAuthProvider();
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
             .then(result => {
@@ -25,6 +27,18 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message);
             })
+    }
+
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, gitHubProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+
     }
 
     const [loginError, setLoginError] = useState('');
@@ -105,7 +119,7 @@ const Login = () => {
                     <h2 className='text-xl font-medium mb-3'>Login with :</h2>
                     <button onClick={handleGoogleSignIn} className="btn-primary btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mb-3"><FcGoogle className='me-3'></FcGoogle>  Sign in Google</button>
                     <br />
-                    <button className="btn-primary btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mb-3"><BsGithub className='me-3'></BsGithub> Sign in Github</button>
+                    <button onClick={handleGithubLogin} className="btn-primary btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mb-3"><BsGithub className='me-3'></BsGithub> Sign in Github</button>
 
                 </div>
             </section>
