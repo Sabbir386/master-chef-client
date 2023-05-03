@@ -83,7 +83,7 @@ const ChefRecipes = () => {
                         <div className="bg-white rounded-lg shadow-lg mb-4">
                             <img className='h-48 rounded-lg w-full object-cover' src={recipes[1].image} alt="Card Image" />
                             <div className="p-4">
-                                <h3 className="text-lg font-medium mb-2"><small className='text-2xl'>Recipe Name :</small>  {recipes[1].name}</h3>
+                                <h3 className="text-xl  font-medium mb-2"><small className='text-2xl'>Recipe Name :</small>  {recipes[1].name}</h3>
                                 <p className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
                                     recipes[1]?.ingredients.map(n => <ul>
                                         <li>

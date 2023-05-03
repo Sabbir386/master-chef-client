@@ -37,12 +37,15 @@ const NavigationBar = () => {
                         </NavLink>
                     </li>
                     <li>
-
-                        <label tabIndex={0} className="btn btn-primary btn-circle p-3">
-                            <div className="w-10 rounded-full ">
-                                <button>Login</button>
-                            </div>
-                        </label>
+                        <NavLink
+                            to='/login'
+                            className={({ isActive }) => (isActive ? 'text-blue-600' : '')}
+                        >
+                            <small className=" btn btn-primary btn-circle p-3">
+                                <div className="w-10 rounded-full ">
+                                    <button>Login</button>
+                                </div></small>
+                        </NavLink>
 
 
 
@@ -102,11 +105,15 @@ const NavigationBar = () => {
                                         </li>
                                         <li>
 
-                                            <label tabIndex={0} className="btn btn-primary btn-circle p-3">
-                                                <div className="w-10 rounded-full ">
-                                                    <button>Login</button>
-                                                </div>
-                                            </label>
+                                            <NavLink
+                                                to='/login'
+                                                className={({ isActive }) => (isActive ? 'text-blue-600' : '')}
+                                            >
+                                                <small className=" btn btn-primary btn-circle p-3">
+                                                    <div className="w-10 rounded-full ">
+                                                        <button>Login</button>
+                                                    </div></small>
+                                            </NavLink>
 
 
 
