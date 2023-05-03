@@ -4,9 +4,21 @@ import {
     Bars3BottomRightIcon,
     XMarkIcon,
 } from '@heroicons/react/24/solid'
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Button } from 'flowbite-react';
 
 const NavigationBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     return (
         <div className='bg-gray-100 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
             <div className='relative flex items-center justify-between'>
@@ -37,15 +49,37 @@ const NavigationBar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to='/login'
-                            className={({ isActive }) => (isActive ? 'text-blue-600' : '')}
-                        >
-                            <small className=" btn btn-primary btn-circle p-3">
-                                <div className="w-10 rounded-full ">
-                                    <button>Login</button>
-                                </div></small>
-                        </NavLink>
+                        {
+                            user ? <>
+                                <Button onClick={handleLogOut}
+
+                                    className={({ isActive }) => (isActive ? 'text-gray-600' : '')}
+                                >
+                                    <small className=" btn btn-primary btn-circle px-3">
+                                        <div className="rounded-full ">
+                                            LogOut
+                                        </div></small>
+                                </Button>
+                                <div className='rounded-lg bg-slate-50 mt-2 bg-gray-100'>
+                                    <p className='text-semibold'>{user?.displayName
+                                    }</p>
+                                    <div className='rounded-lg '>
+                                        <img className='mx-auto rounded-lg h-12 w-12 object-cover' src={user.photoURL} alt="" />
+                                    </div>
+                                </div>
+                            </> :
+
+                                <NavLink
+                                    to='/login'
+                                    className={({ isActive }) => (isActive ? 'text-gray-600' : '')}
+                                >
+                                    <small className=" btn btn-primary btn-circle p-3">
+                                        <div className="rounded-full ">
+                                            <button>Login</button>
+                                        </div></small>
+                                </NavLink>
+
+                        }
 
 
 
@@ -105,15 +139,30 @@ const NavigationBar = () => {
                                         </li>
                                         <li>
 
-                                            <NavLink
-                                                to='/login'
-                                                className={({ isActive }) => (isActive ? 'text-blue-600' : '')}
-                                            >
-                                                <small className=" btn btn-primary btn-circle p-3">
-                                                    <div className="w-10 rounded-full ">
-                                                        <button>Login</button>
-                                                    </div></small>
-                                            </NavLink>
+                                            {
+                                                user ? <>
+                                                    <button onClick={handleLogOut}
+
+                                                        className={({ isActive }) => (isActive ? 'text-gray-600' : '')}
+                                                    >
+                                                        <small className=" btn btn-primary btn-circle px-3">
+                                                            <div className="rounded-full ">
+                                                                LogOut
+                                                            </div></small>
+                                                    </button>
+                                                </> :
+
+                                                    <NavLink
+                                                        to='/login'
+                                                        className={({ isActive }) => (isActive ? 'text-gray-600' : '')}
+                                                    >
+                                                        <small className=" btn btn-primary btn-circle p-3">
+                                                            <div className="rounded-full ">
+                                                                <button>Login</button>
+                                                            </div></small>
+                                                    </NavLink>
+
+                                            }
 
 
 

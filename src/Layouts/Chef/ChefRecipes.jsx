@@ -8,7 +8,7 @@ const ChefRecipes = () => {
     const [favouriteTwo, setFavouriteTwo] = useState(true);
     const { id } = useParams();
     const ChefDeatils = useLoaderData();
-    console.log(ChefDeatils);
+    // console.log(ChefDeatils);
 
     const handlefavourite = () => {
         toast('Added Favourite');

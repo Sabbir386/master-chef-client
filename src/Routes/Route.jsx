@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Blog from "../components/Blog/Blog";
 import ChefRecipes from "../Layouts/Chef/ChefRecipes";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recepies/:id',
-                element: <ChefRecipes></ChefRecipes>,
+                element: <ProtectedRoute><ChefRecipes></ChefRecipes></ProtectedRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
             }
         ]

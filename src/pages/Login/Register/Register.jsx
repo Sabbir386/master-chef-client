@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -36,6 +37,8 @@ const Register = () => {
             .catch(error => {
                 console.log(error.message);
             })
+
+        toast('successfully created user');
 
     }
 
