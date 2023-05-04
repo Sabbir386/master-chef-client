@@ -60,7 +60,7 @@ const NavigationBar = () => {
                                             LogOut
                                         </div></small>
                                 </Button>
-                                <div className='rounded-lg bg-slate-50 mt-2 bg-gray-100'>
+                                <div className='rounded-lg mt-2 bg-gray-100'>
                                     <p className='text-semibold'>{user?.displayName
                                     }</p>
                                     <div className='rounded-lg '>
@@ -145,7 +145,7 @@ const NavigationBar = () => {
 
                                                         className={({ isActive }) => (isActive ? 'text-gray-600' : '')}
                                                     >
-                                                        <small className=" btn btn-primary btn-circle px-3">
+                                                        <small className=" btn btn-primary btn-circle p-3">
                                                             <div className="rounded-full ">
                                                                 LogOut
                                                             </div></small>
