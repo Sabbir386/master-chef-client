@@ -33,7 +33,9 @@ const Login = () => {
         signInWithPopup(auth, gitHubProvider)
             .then(result => {
                 const loggedInUser = result.user;
+                navigate('/');
                 console.log(loggedInUser);
+
             })
             .catch(error => {
                 console.log(error.message);
@@ -50,9 +52,9 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const handleLogin = event => {
         event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+        const htmlForm = event.target;
+        const email = htmlForm.email.value;
+        const password = htmlForm.password.value;
         // validate
         setLoginError('');
 
@@ -83,11 +85,11 @@ const Login = () => {
                             </h1>
                             <form onSubmit={handleLogin} className="space-y-4 md:space-y-6" action="#">
                                 <div>
-                                    <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                                     <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input email" required />
                                 </div>
                                 <div>
-                                    <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                                     <input type="password" name="password" id="password" placeholder="input Password" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                 </div>
                                 <div className="flex items-center justify-between">
@@ -96,17 +98,17 @@ const Login = () => {
                                             <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
                                         </div>
                                         <div className="ml-3 text-sm">
-                                            <label for="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
+                                            <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
                                         </div>
                                     </div>
-                                    <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                                    <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">htmlForgot password?</a>
                                 </div>
                                 <button className='btn btn-primary p-3'>Login</button>
 
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                    Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-600">
+                                    Don’t have an account yet? <span className="font-medium text-primary-600 hover:underline dark:text-primary-600">
                                         <Link to="/register">Register</Link>
-                                    </a>
+                                    </span>
                                 </p>
                             </form>
                             <p className='text-red-500'>{loginError}</p>
@@ -122,7 +124,7 @@ const Login = () => {
                     <button onClick={handleGithubLogin} className="btn-primary btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mb-3"><BsGithub className='me-3'></BsGithub> Sign in Github</button>
 
                 </div>
-            </section>
+            </section >
 
 
         </>

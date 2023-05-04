@@ -18,7 +18,7 @@ const Blog = () => {
             </div>
             <div className=' text-center my-3'>
                 <h1 className='text-center my-3'><span className='text-xl font-semibold'>Question 3 : </span>:Tell us the difference between nodejs and express js ?</h1>
-                <p className='text-center'>js web application framework that provides a robust set of features for web and mobile applications. In other words, NodeJS is the package, which provides the JavaScript run-time environment, whereas Express is a framework that sits on top of NodeJS and helps us to handle requests and responses.</p>
+                <p className='text-center'>js web application framework that provides a robust set of features htmlFor web and mobile applications. In other words, NodeJS is the package, which provides the JavaScript run-time environment, whereas Express is a framework that sits on top of NodeJS and helps us to handle requests and responses.</p>
             </div>
             <div className=' text-center my-3'>
                 <h1 className='text-center my-3'><span className='text-xl font-semibold'>Question 4 : </span>: What is a custom hook, and why will you create a custom hook ?</h1>
