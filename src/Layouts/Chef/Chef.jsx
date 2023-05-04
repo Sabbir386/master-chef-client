@@ -9,7 +9,7 @@ const Chef = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://master-chef-server-site-sabbir386.vercel.app/categories')
             .then(res => res.json())
             .then(data => setChefMaster(data))
             .catch(error => console.log(error))

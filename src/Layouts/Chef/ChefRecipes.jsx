@@ -53,14 +53,15 @@ const ChefRecipes = () => {
                                 <img className='h-48 rounded-lg w-full object-cover' src={recipes[0].image} alt="Card Image" />
                                 <div className="p-4">
                                     <h3 className="text-lg font-medium mb-2"><small className='text-2xl'>Recipe Name :</small>  {recipes[0].name}</h3>
-                                    <p className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
-                                        recipes[0]?.ingredients.map(n => <ul>
-                                            <li>
-                                                {n}
-                                            </li>
-                                        </ul>)
+                                    <div className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
+
+                                        recipes[0]?.ingredients.map((n, index) => <p key={index}>
+
+                                            {n}
+
+                                        </p>)
                                     }
-                                    </p>
+                                    </div>
                                     <p className=' font-medium mt-2'>Cooking Method :
                                         <br />
                                         <small>
@@ -86,14 +87,14 @@ const ChefRecipes = () => {
                                 <img className='h-48 rounded-lg w-full object-cover' src={recipes[1].image} alt="Card Image" />
                                 <div className="p-4">
                                     <h3 className="text-xl  font-medium mb-2"><small className='text-2xl'>Recipe Name :</small>  {recipes[1].name}</h3>
-                                    <p className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
-                                        recipes[1]?.ingredients.map(n => <ul>
-                                            <li>
+                                    <div className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
+                                        recipes[1]?.ingredients.map((n, index) =>
+                                            <p key={index}>
                                                 {n}
-                                            </li>
-                                        </ul>)
+                                            </p>
+                                        )
                                     }
-                                    </p>
+                                    </div>
                                     <p className=' font-medium mt-2'>Cooking Method :
                                         <br />
                                         <small>
@@ -118,14 +119,14 @@ const ChefRecipes = () => {
                                 <img className='h-48 rounded-lg w-full object-cover' src={recipes[2].image} alt="Card Image" />
                                 <div className="p-4">
                                     <h3 className="text-lg font-medium mb-2"><small className='text-2xl'>Recipe Name :</small>  {recipes[2].name}</h3>
-                                    <p className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
-                                        recipes[2]?.ingredients.map(n => <ul>
-                                            <li>
-                                                {n}
-                                            </li>
-                                        </ul>)
+                                    <div className="text-gray-600 "><small className='text-xl font-medium'>Ingredients :</small> {
+                                        recipes[2]?.ingredients.map((n, index) => <p key={index}>
+
+                                            {n}
+
+                                        </p>)
                                     }
-                                    </p>
+                                    </div>
                                     <p className=' font-medium mt-2'>Cooking Method :
                                         <br />
                                         <small>

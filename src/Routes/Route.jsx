@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/recepies/:id',
                 element: <ProtectedRoute><ChefRecipes></ChefRecipes></ProtectedRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://master-chef-server-site-sabbir386.vercel.app/categories/${params.id}`)
             }
         ]
 
